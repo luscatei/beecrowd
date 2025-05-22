@@ -1,0 +1,19 @@
+h,z,l = map(int, input().split())
+
+result = ("huguinho" if (z < h < l) or (l < h < z) else
+          "zezinho" if (h < z < l) or (l < z < h) else
+          "luizinho")
+
+print(result)
+
+
+# Segunda versao do codigo acima mas explorando uma funcionalidade diferente, dicionario. 
+h, z, l = map(int, input().split())
+idades = {
+    'huguinho': h,
+    'zezinho': z,
+    'luisinho': l
+}
+
+ordenados = sorted(idades.items(), key=lambda x: x[1])
+print(ordenados[1][0])
